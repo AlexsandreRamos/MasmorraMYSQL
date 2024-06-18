@@ -1,0 +1,45 @@
+create database jogo
+default character set utf8mb4
+default collate utf8mb4_0900_ai_ci;
+
+-- CRIAR TABELA
+
+create table Usuarios(
+id int not null auto_increment,
+nome varchar(30),
+MasmorrasConcluida int,
+pontuacao int,
+primary key (id)
+)default charset = utf8mb4;
+
+
+create table classe(
+idclasse int not null auto_increment,
+classe varchar(30),
+vitalidade int,
+forca int,
+stamina int,
+magia int,
+primary key (idclasse),
+foreign key (idclasse) references usuarios(id) 
+)default charset = utf8mb4;
+
+
+create table equipamentos(
+idEquipamentos int not null auto_increment,
+cabeca varchar(30),
+peitoral varchar(30),
+pernas varchar(30),
+maos varchar(30),
+armas text,
+primary key (idEquipamentos),
+foreign key (idEquipamentos) references classe(idclasse)
+)default charset = utf8mb4; 
+
+
+-- VER TABELA
+
+
+SELECT * FROM usuarios;
+SELECT * FROM classe;
+SELECT * FROM Equipamentos;
