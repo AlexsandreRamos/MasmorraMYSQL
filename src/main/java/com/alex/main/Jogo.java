@@ -594,8 +594,7 @@ public class Jogo extends Inventario{
                  statement.setInt(4, stamina);
                  statement.setInt(5, magia);
                  statement.executeUpdate();
-                 int executeUpdate = statement.executeUpdate();
-                 System.out.println(executeUpdate);
+            
              }catch(SQLException e){
                  e.printStackTrace();
                  
@@ -619,9 +618,8 @@ public class Jogo extends Inventario{
                  statement.setString(1, nomePersonagem);
                  statement.setInt(2, masmorrasConcluidas);
                  statement.setInt(3, pontuacao);
-                 
-                int executeUpdate = statement.executeUpdate();
-                System.out.println(executeUpdate);
+                 statement.executeUpdate();
+                
              }catch(SQLException e){
                  e.printStackTrace();
                  
@@ -686,9 +684,8 @@ public class Jogo extends Inventario{
                         statement.setString(3, botas);
                         statement.setString(4, luvas);
                         statement.setString(5, armas);
-                      
-                        int executeUpdate = statement.executeUpdate();
-                        System.out.println(executeUpdate);
+                        statement.executeUpdate();
+                     
                     }catch(SQLException e){
                         e.printStackTrace();
                         
