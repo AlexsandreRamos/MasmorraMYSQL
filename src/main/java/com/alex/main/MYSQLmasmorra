@@ -5,37 +5,41 @@ default collate utf8mb4_0900_ai_ci;
 -- CRIAR TABELA
 
 create table Usuarios(
-id int not null auto_increment,
+idUsuario int not null auto_increment,
 nome varchar(30),
-MasmorrasConcluida int,
+masmorrasconcluidas int,
 pontuacao int,
-primary key (id)
+primary key (idUsuario)
 )default charset = utf8mb4;
 
 
 create table classe(
-idclasse int not null auto_increment,
+idUsuario int not null auto_increment,
 classe varchar(30),
 vitalidade int,
 forca int,
 stamina int,
 magia int,
-primary key (idclasse),
-foreign key (idclasse) references usuarios(id) 
+primary key (idUsuario)
 )default charset = utf8mb4;
 
 
 create table equipamentos(
-idEquipamentos int not null auto_increment,
+idUsuario int not null auto_increment,
 cabeca varchar(30),
 peitoral varchar(30),
 pernas varchar(30),
 maos varchar(30),
 armas text,
-primary key (idEquipamentos),
-foreign key (idEquipamentos) references classe(idclasse)
+primary key (idUsuario)
+
 )default charset = utf8mb4; 
 
+-- DROPAR TABELAS
+
+drop table equipamentos;
+drop table classe;
+drop table usuarios;
 
 -- VER TABELA
 
