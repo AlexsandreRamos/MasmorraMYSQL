@@ -6,7 +6,7 @@ Este é um projeto baseado em um sistema simples de masmorras, combates, atribut
 -  **NÍVEIS**:
     - **Nível 1**:
         - **XP**: 0;
-        - **Modificações**: Nenhumea.
+        - **Modificações**: Nenhuma.
     - **Nível 2**:
         - **XP**: 250;
         - **Modificações**: +50 Vitalidade, +10 Força, +10 Mágia e +5 Stamina.
@@ -42,10 +42,14 @@ Este é um projeto baseado em um sistema simples de masmorras, combates, atribut
 - **MASMORRAS**:
     - **Níveis disponíveis**: 2
     - **Inimigos**:
-        - **Nivel 1**: Goblin (100 de Vida).
+        - **Nivel 1**: Goblin .
+            - **Vida**: 100;
+            - **Dano**:5;
             - **Drops Itens**: 2 Poções de Cura;
             - **Drops XP**:   75 a 100.  
         - **Nivel 2**: Zumbi (150 de Vida).
+            - **Vida**: 150;
+            - **Dano**: 15;
             - **Drops Itens**: 4 Poções de Cura e Cajado Aprimorado(Somente Mago);
             - **Drops XP**:   150 a 200.
 
@@ -60,7 +64,7 @@ Este é um projeto baseado em um sistema simples de masmorras, combates, atribut
     - Resetar as Masmorras (Aumenta a Dificuldade);
     - Sair do jogo.
    - **Inventário**:
-      - Cada classe possue seus próprios equipamentos, onde é informado se os itens estão equipados ou não e te da a possibilidade de equipar ou desequipar os equipamentos;
+      - Cada classe possue seus próprios equipamentos, onde é informado se os itens estão equipados ou não, e te da a possibilidade de equipar ou desequipar os equipamentos;
           - Exemplo:
         ```
             (1) Cajado 'EQUIPADO'
@@ -133,8 +137,17 @@ Este é um projeto baseado em um sistema simples de masmorras, combates, atribut
         - **MÉTODO 2**:
             -  Caso concluido ocorrerá um reset nas masmorras e a vida dos inimigos será multiplicadas aumentando a dificuldade.
   - **Sair do Jogo**:
-    
+            - Ao selecionar a opção '(X) Sair do Jogo', ocorrerá 1 método que vai somar a pontuação do usuario e depois concluir o codigo.
 
+  - **MYSQL**:
+            - Essa funcionalidade é acionada sempre no momento de concluir o código, passando por 3 métodos que basicamente eles fazem o checkup dos atributos e equipamentos e passam para uma tabela organizada no MySQL.
+
+# ESTRUTURA DO PROJETO
+             
+  1. `Main`: Classe principal que inicia o jogo;
+  2. `Jogo`: Classe base do jogo, (menu, masmorra, etc...)
+  3. `Inventario`: Classe que organiza o Inventário do jogo    
+  4. `Atributo`: Classe que distribui os atributos para o usuario.
             
 
               
