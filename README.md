@@ -148,8 +148,79 @@ Este é um projeto baseado em um sistema simples de masmorras, combates, atribut
   2. `Jogo`: Classe base do jogo, (menu, masmorra, etc...)
   3. `Inventario`: Classe que organiza o Inventário do jogo    
   4. `Atributo`: Classe que distribui os atributos para o usuario.
-            
 
-              
+# CONFIGURAÇÃO DO MYSQL
+
+  - Execute o seguinte script SQL para criar o banco de dados e a tabela necessária:
+
+    ```sql
+
+            create database jogo
+            default character set utf8mb4
+            default collate utf8mb4_0900_ai_ci;
+            
+            -- CRIAR TABELA
+            
+            create table Usuarios(
+            idUsuario int not null auto_increment,
+            nome varchar(30),
+            masmorrasconcluidas int,
+            pontuacao int,
+            primary key (idUsuario)
+            )default charset = utf8mb4;
+            
+            
+            create table classe(
+            idUsuario int not null auto_increment,
+            classe varchar(30),
+            vitalidade int,
+            forca int,
+            stamina int,
+            magia int,
+            primary key (idUsuario)
+            )default charset = utf8mb4;
+            
+            
+            create table equipamentos(
+            idUsuario int not null auto_increment,
+            cabeca varchar(30),
+            peitoral varchar(30),
+            pernas varchar(30),
+            maos varchar(30),
+            armas text,
+            primary key (idUsuario)
+            
+            )default charset = utf8mb4; 
+
+# CONFIGURAÇÃO DO PROJETO
+Adicione o conector JDBC para MySQL ao seu projeto.
+
+Atualize as credenciais do banco de dados na classe Database:
+```java
+private static final String URL = "jdbc:mysql://localhost:3306/";
+private static final String USER = "seu_usuario";
+private static final String PASSWORD = "sua_senha";
+```
+Compile e execute o programa:
+```sh
+javac com\alex\main\main.java
+java jogoRPG
+```
+
+## CONTRIBUIÇÕES
+implementação do banco de dados com o suporte de Juan e Luis Guilherme.
+
+## LICENÇA
+Este projeto está licenciado sob a MIT License.
+
+## PRÉ-REQUISITOS
+
+ - Java 8 ou superior
+ - MySQL
+ - Conector JDBC para MySQL
+
+#### CONTATO
+Autor: Alexsandre Fagundes Ramos
+Email: Alexsandrefagundesramos@gmail.com
           
         
