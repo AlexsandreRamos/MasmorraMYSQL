@@ -38,9 +38,10 @@ public class Jogo extends Inventario{
         System.out.println("Escreva o nome do seu personagem: ");   
     nomePersonagem = teclado.nextLine();
     
-    
-     
- 
+    }
+     public void escolherClasse(){
+          Scanner teclado = new Scanner(System.in);
+          
     System.out.println("Escolha sua classe:"
                 + "\n(1) Mago"
                 + "\n(2) Guerreiro"
@@ -63,7 +64,7 @@ public class Jogo extends Inventario{
                 break;
             default:
                 System.out.println("Valor inválido tente novamente!");
-                menu();
+                escolherClasse();
                 break;    
         }
         setAtributosClasse();       
@@ -76,11 +77,11 @@ public class Jogo extends Inventario{
     public void menu(){
         Scanner teclado = new Scanner(System.in);
         System.out.println("\n\nO que você quer fazer:"
-                + "\n(1)Abrir inventário"
-                + "\n(2)Ver atributos"
+                + "\n(1)Abrir Inventário"
+                + "\n(2)Ver Atributos"
                 + "\n(3)Ir para Masmorra nivel "+ nivelMasmorra
                 + "\n(4)Resetar a Masmorra"
-                + "\n\n(X)Sair do jogo"
+                + "\n\n(X)Sair do Jogo"
                         + "\nDigite aqui: ");
         
         
@@ -458,7 +459,7 @@ public class Jogo extends Inventario{
                    
                }else{
                   System.out.println("Você ganhou 150 de xp!");
-                   xpPersonagem += 15;
+                   xpPersonagem += 150;
                    avisarXP();
                    
                }
