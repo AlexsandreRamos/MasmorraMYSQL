@@ -37,7 +37,7 @@ public class Jogo extends Inventario{
     
         System.out.println("Escreva o nome do seu personagem: ");   
     nomePersonagem = teclado.nextLine();
-    
+    escolherClasse();
     }
      public void escolherClasse(){
           Scanner teclado = new Scanner(System.in);
@@ -714,4 +714,3 @@ public class Jogo extends Inventario{
      
      
      
-
